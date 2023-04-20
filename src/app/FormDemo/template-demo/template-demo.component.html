@@ -1,0 +1,27 @@
+<form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+    <div>
+        <label>Username</label>:
+        <input name="username" required maxlength="2" [(ngModel)]="userName" #inputUserName="ngModel" placeholder="enter your username" type="text">
+        <label *ngIf="inputUserName.valid && inputUserName.touched" class="error-label">Username is required</label>
+    </div>
+    <div>
+        <label>Email</label>:
+        <input name="email"  required [(ngModel)]="emailId" #inputEmail="ngModel" InputName placeholder="enter your email id" type="text">
+        <label *ngIf="inputEmail.valid && inputEmail.touched && inputEmail.dirty" class="error-label">Email
+            is required</label>
+    </div>
+    <div>
+        <label>Password</label>:
+        <input name="password" required [(ngModel)]="password" #inputPassword="ngModel" placeholder="enter password" type="password">
+        <label *ngIf="inputPassword.valid && inputPassword.touched" class="error-label">password is required</label>
+    </div>
+    <button type="submit" [disabled]="!registerForm.form.valid">Register</button>
+    <button type="reset" (click)="registerForm.reset()">Reset</button>
+
+
+    <pre>{{ registerForm.form.value | json }}</pre> <!-- Value of whole form -->
+<pre>User name: {{ inputUserName.value }}</pre> <!-- Value of userName field -->
+<pre>Valid form? {{ registerForm.form.valid | json }}</pre> <!-- Validity of whole form -->
+
+</form>
+

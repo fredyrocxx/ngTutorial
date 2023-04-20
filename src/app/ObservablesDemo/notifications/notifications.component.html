@@ -1,0 +1,9 @@
+   <span (click)="showList()"><fa-icon [icon]="faBell"></fa-icon></span>  
+    <ul class="list-group" *ngIf="showNotification">
+        <li class="list-group-item" *ngFor="let notification of notifications">
+            {{notification}}
+        </li>
+    </ul>
+
+
+<app-add-employee></app-add-employee>

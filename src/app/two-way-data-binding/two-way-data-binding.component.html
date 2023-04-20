@@ -1,0 +1,11 @@
+<fieldset>
+        <legend>Personal Info:</legend>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" [(ngModel)]="firstName" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" [(ngModel)]="lastName" name="lname"><br><br>
+        <button (click)="SaveData()">Save</button>
+  <br>
+        <span>Entered Name is {{firstName}} {{lastName}}</span>
+      </fieldset>
+    

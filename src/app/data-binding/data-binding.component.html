@@ -1,0 +1,54 @@
+<html>
+    <head>
+	<style>
+	.traffic-light {
+  background: black;
+  width: 75px;
+  height: 150px;
+  margin: auto;
+}
+.light {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  margin: auto;
+}
+.light.red {
+  background: #520202;
+}
+.light.red.on {
+  background: #ff0000;
+}
+.light.yellow {
+  background: #3F4A00;
+}
+.light.yellow.on {
+  background: #ffff00;
+}
+.light.green {
+  background: #044A00;
+}
+.light.green.on {
+  background: #008000;
+}
+button {
+  width: 75px;
+  height: 30px;
+  margin: auto;
+}
+
+	</style>
+        <title></title>
+    </head>
+    <body>
+<div class="traffic-light">
+  <div id="redlight" class="light red on"></div>
+  <div id="yellowlight" class="light yellow"></div>
+  <div id="greenlight" class="light green"></div>
+  <br>
+  <button>Red</button>
+  <button>Yellow</button>
+  <button>Green</button>
+</div>
+ </body>
+</html>

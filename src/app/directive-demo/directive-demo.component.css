@@ -1,0 +1,28 @@
+
+table, td, th {  
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 50%;
+  }
+  
+  th, td {
+    padding: 2px;
+  }
+
+.clsBlue{
+    background-color: red;
+}
+.clseven { background-color:red; }
+.clsodd { background-color: gray; }
+
+  
+.clsfirst { background-color: greenyellow; }
+.clslast { background-color:lightcoral; font-weight: bolder; }
+.clsheader-black{background-color: black;color: white;}
+.clsheader-red{background-color: red;color: white;}
+.customer-div {background-color: royalblue};
+.customer-div1 {background-color: royalblue};

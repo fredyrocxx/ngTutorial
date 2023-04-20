@@ -1,0 +1,18 @@
+<form [formGroup]="registerformGroup" (ngSubmit)="onRegister(registerformGroup)">
+    <div>
+        <label>Name</label>:
+        <input formControlName="firstname" placeholder="enter your name" type="text">
+        <label *ngIf="isSubmitted && registerformGroup.get('firstname').hasError('required')" class="error-label">First Name is required</label>
+    </div>
+    <div>
+        <label>Email</label>:
+        <input formControlName="emailid" placeholder="enter your email id" type="text">
+        <label *ngIf="isSubmitted && registerformGroup.controls.emailid.hasError('required')" class="error-label">Email is required</label>
+    </div>
+    <div>
+        <label>DOB</label>:
+        <input formControlName="dob" placeholder="type date of birth" type="date">
+        <label *ngIf="isSubmitted && registerformGroup.controls.dob.hasError('required')" class="error-label">Date of birth is required</label>
+    </div>
+    <button type="submit" [disabled]="!registerformGroup.valid">Send</button>
+</form>

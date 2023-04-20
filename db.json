@@ -1,0 +1,20 @@
+{
+  "employees": [
+    {
+      "name": "sandesh sarfare",
+      "email": "sandesh@gmail.com",
+      "gender": "male",
+      "dateOfBirth": "1988-08-10",
+      "isActive": false,
+      "id": 1
+    },
+    {
+      "name": "Suruchi Gade",
+      "email": "suruchi@aol.com",
+      "gender": "female",
+      "dateOfBirth": "1990-10-10",
+      "isActive": true,
+      "id": 2
+    }
+  ]
+}

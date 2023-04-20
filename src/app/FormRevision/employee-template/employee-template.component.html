@@ -1,0 +1,58 @@
+<div class="container">
+    <form #userForm="ngForm" (ngSubmit)="SaveUser(userForm)">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Name</label>
+            <input type="text" maxlength="25" required #elementName="ngModel" [(ngModel)]="userName" class="form-control"
+             name="inputName" placeholder="Enter Name">
+        <div *ngIf="!elementName.valid && elementName.touched" class="">Please enter name </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">DOB</label>
+            <input type="date" required #elementDOB="ngModel" [(ngModel)]="dob" class="form-control" name="inputDOB" placeholder="Enter DOB">
+            <div *ngIf="!elementDOB.valid && elementDOB.touched" class="">Please enter dob </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Email address</label>
+            <input type="email" required #elementEmail="ngModel" [(ngModel)]="emailId" class="form-control" name="inputEmail"
+                placeholder="name@example.com">
+                <div  *ngIf="!elementEmail.valid && elementEmail.touched" class="">Please enter email </div>
+            </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea class="form-control" required #elementAddress="ngModel" [(ngModel)]="address" name="inputAddress" rows="3"
+                placeholder="Enter Address"></textarea>
+                <div *ngIf="!elementAddress.valid && elementAddress.touched" class="">Please enter address </div>
+            </div>
+        <div class="form-group">
+            <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    <table class="table table-hover table-dark">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">DOB</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of userList">
+                <th scope="row">1</th>
+                <td>{{user.name}}</td>
+                <td>{{user.dob}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.address}}</td>
+                <td (click)="getUserDetails(user,userForm)">Edit</td>
+                <td (click)="deleteUser(user)">Delete</td>
+              </tr>
+           
+            </tbody>
+          </table>
+          
+
+</div>

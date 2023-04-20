@@ -1,0 +1,84 @@
+<div>
+    <table id="customers">
+        <tr [ngClass]="headerClass">
+            <th>Sr No</th>
+            <th>Customer code</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+        </tr>
+
+        <tr *ngFor="let customer of customers;let custindex=index;let custOdd =odd;let custEven=even;"
+            [ngClass]="{clsodd:custOdd,clseven:custEven}">
+            <td>{{custindex+1}}</td>
+            <td>{{customer.customerNo}}</td>
+            <td>{{customer.name}}</td>
+            <td>{{customer.address}}</td>
+            <td>{{customer.city}}</td>
+            <td>{{customer.state}}</td>
+        </tr>
+    </table>
+
+</div>
+<br>
+Show first and last customer
+<br>
+<div>
+    <table id="customers">
+        <tr class="">
+            <th>Sr No</th>
+            <th>Customer code</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+        </tr>
+
+        <tr *ngFor="let customer of customers;let custindex=index;let custFirst=first;let custLast=last"
+            [ngClass]="{clsfirst:custFirst, clslast:custLast}">
+            <td>{{custindex+1}}</td>
+            <td>{{customer.customerNo}}</td>
+            <td>{{customer.name}}</td>
+            <td>{{customer.address}}</td>
+            <td>{{customer.city}}</td>
+            <td>{{customer.state}}</td>
+        </tr>
+    </table>
+
+</div>
+
+<br>
+Track By
+<br>
+<div>
+    <table id="customers">
+        <tr class="">
+            <th>Sr No</th>
+            <th>Customer code</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+        </tr>
+
+        <tr *ngFor="let customer of customers; let custindex=index;">
+            <td>{{custindex+1}}</td>
+            <td>{{customer.customerNo}}</td>
+            <td>{{customer.name}}</td>
+            <td>{{customer.address}}</td>
+            <td>{{customer.city}}</td>
+            <td>{{customer.state}}</td>
+        </tr>
+    </table>
+<button *ngIf="isAdmin" (click)="refreshCustomers()"> Refresh </button>
+</div>
+
+<div>
+    <div *ngIf="!isAdmin" [ngStyle]="adminTheme">Customer</div>
+    <div *ngIf="isAdmin" class="customer-div">Admin</div>
+</div>
+<br>
+<div Errordiv *ngIf="isError">
+Please enter email id
+</div>
